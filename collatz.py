@@ -1,7 +1,5 @@
-while True:
-    value = int(input("Input: "))
+def collatz(number):
 
-    def collatz(number):
         if number != 1:
             if number % 2 == 0: #If # is even, divide by 2
                 number = number // 2
@@ -14,4 +12,9 @@ while True:
         
         collatz(number) # Call the function recursively
 
-    collatz(value) 
+while True:
+    try:
+        value = int(input("Input: "))
+        collatz(value)
+    except ValueError:
+        print("Invalid, enter an integer instead")
